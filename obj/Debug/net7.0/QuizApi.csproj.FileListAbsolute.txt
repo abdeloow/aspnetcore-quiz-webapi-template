@@ -68,3 +68,4 @@ C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\QuizApi.pdb
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\QuizApi.genruntimeconfig.cache
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\ref\QuizApi.dll
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\QuizApi.sourcelink.json
