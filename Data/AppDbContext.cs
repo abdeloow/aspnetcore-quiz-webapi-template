@@ -9,8 +9,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Question> Questions { get; set; }
     public DbSet<Answer> Answers { get; set; }
     public DbSet<QuizSession> QuizSessions { get; set; }
-    public DbSet<QuizSessionQuestion> QuizSessionQuestions { get; set; }
-    public DbSet<QuizSessionAnswer> QuizSessionAnswers { get; set; }
+    public DbSet<QuizSessionQuestionResponse> QuizSessionResponses { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : base(dbContextOptions)
     {
 
@@ -18,12 +17,10 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Question>().HasMany(q => q.Answers).WithOne(a => a.Question)
-                                        .HasForeignKey(a => a.QuestionId).OnDelete(DeleteBehavior.Cascade);
-        modelBuilder.Entity<QuizSession>().HasMany(qs => qs.QuizSessionQuestions).WithOne(q => q.QuizSession)
-                                            .HasForeignKey(q => q.QuizSessionId);
-        modelBuilder.Entity<QuizSessionQuestion>().HasMany(q => q.QuizSessionAnswers).WithOne(a => a.QuizSessionQuestion)
-                                                .HasForeignKey(a => a.QuizSessionQuestionId);
+        modelBuilder.Entity<QuizSessionQuestionResponse>().HasOne(q => q.QuizSession).WithMany(qs => qs.QuizSessionQuestionResponses)
+                    .HasForeignKey(q => q.QuestionId);
+        modelBuilder.Entity<QuizSessionQuestionResponse>().HasOne(q => q.Question).WithMany().HasForeignKey(qr => qr.QuestionId);
+        modelBuilder.Entity<QuizSessionQuestionResponse>().HasOne(q => q.SelectedAnswer).WithMany().HasForeignKey(qr => qr.SelectedAnswerId);
     }
 
 }

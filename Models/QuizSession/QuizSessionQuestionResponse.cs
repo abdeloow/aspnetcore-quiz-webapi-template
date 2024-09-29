@@ -3,15 +3,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizApi;
 
-public class QuizSessionQuestion
+public class QuizSessionQuestionResponse
 {
     [Key]
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     [ForeignKey("QuizSession")]
     public Guid QuizSessionId { get; set; }
-    public virtual QuizSession QuizSession { get; set; } = null!;
+    public QuizSession QuizSession { get; set; } = null!;
     [ForeignKey("Question")]
     public int QuestionId { get; set; }
     public virtual Question Question { get; set; } = null!;
-    public virtual ICollection<QuizSessionAnswer> QuizSessionAnswers { get; set; } = new List<QuizSessionAnswer>();
+    public int? SelectedAnswerId { get; set; }
+    public virtual Answer SelectedAnswer { get; set; } = null!;
+    public bool IsCorrect { get; set; }
 }

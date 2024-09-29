@@ -13,5 +13,5 @@ public class QuizSession
     public DateTime? EndTime { get; set; }
     [Required]
     public bool IsCompleted { get; set; }
-    public virtual ICollection<QuizSessionQuestion> QuizSessionQuestions { get; set; } = new List<QuizSessionQuestion>();
+    public virtual ICollection<QuizSessionQuestionResponse> QuizSessionQuestionResponses { get; set; } = new List<QuizSessionQuestionResponse>();
 }
