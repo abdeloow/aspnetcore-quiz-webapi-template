@@ -18,7 +18,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<QuizSessionQuestionResponse>().HasOne(q => q.QuizSession).WithMany(qs => qs.QuizSessionQuestionResponses)
-                    .HasForeignKey(q => q.QuestionId);
+                    .HasForeignKey(q => q.QuizSessionId);
         modelBuilder.Entity<QuizSessionQuestionResponse>().HasOne(q => q.Question).WithMany().HasForeignKey(qr => qr.QuestionId);
         modelBuilder.Entity<QuizSessionQuestionResponse>().HasOne(q => q.SelectedAnswer).WithMany().HasForeignKey(qr => qr.SelectedAnswerId);
     }

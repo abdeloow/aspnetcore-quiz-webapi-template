@@ -69,3 +69,9 @@ C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\QuizApi.genruntimec
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\ref\QuizApi.dll
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\obj\Debug\net7.0\QuizApi.sourcelink.json
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
