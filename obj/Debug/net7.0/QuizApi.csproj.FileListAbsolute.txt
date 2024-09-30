@@ -75,3 +75,11 @@ C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.AspNetCor
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\dihba\Desktop\Web Dev\Quiz\QuizApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
