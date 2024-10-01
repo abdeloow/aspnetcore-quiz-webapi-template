@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace QuizApi;
+
+[Authorize]
 [ApiController]
 [Route("/[controller]")]
 public class QuizSessionController : ControllerBase

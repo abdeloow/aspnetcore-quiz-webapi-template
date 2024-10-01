@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuizApi;
@@ -7,12 +8,10 @@ namespace QuizApi;
 public class AuthController : ControllerBase
 {
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly IAuthService _authService;
-    public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IAuthService authService)
+    public AuthController(UserManager<ApplicationUser> userManager, IAuthService authService)
     {
         _userManager = userManager;
-        _signInManager = signInManager;
         _authService = authService;
     }
     [HttpPost("register")]

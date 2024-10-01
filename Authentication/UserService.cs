@@ -24,7 +24,14 @@ public class UserService : IUserService
 
     public string GetCurrentUserId()
     {
-        var userId = _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        var user = _httpContextAccessor.HttpContext?.User;
+        var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        Console.WriteLine($"User claims: {string.Join(", ", user.Claims.Select(c => $"{c.Type}: {c.Value}"))}");
+        if (string.IsNullOrEmpty(userId))
+        {
+            throw new UnauthorizedAccessException("User is not authenticated");
+        }
         return userId;
     }
+
 }

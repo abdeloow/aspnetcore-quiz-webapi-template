@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace QuizApi;
 
@@ -51,18 +49,47 @@ public class QuizSessionService : IQuizSessionService
 
     public async Task<QuizSession> StartQuizAsync(Configurations configurations, string userId)
     {
-        var questions = await _questionService.GetAllQuestionsAsync();
-        var selectedAnswer = questions.Where(q => q.Category == configurations.Field && q.Difficulty == configurations.Difficulty)
-                            .OrderBy(r => Guid.NewGuid()).Take(configurations.QuestionsAmount).ToList();
+        // Fetch questions based on configurations (category, difficulty, and amount)
+        var selectedQuestions = await _questionService.GetAllQuestionsAsync();
+        selectedQuestions = selectedQuestions
+                            .Where(q => q.Category == configurations.Field && q.Difficulty == configurations.Difficulty)
+                            .OrderBy(r => Guid.NewGuid()) // Random order
+                            .Take(configurations.QuestionsAmount) // Take required amount
+                            .ToList();
+
         var quizSession = new QuizSession
         {
             SessionId = Guid.NewGuid(),
             UserId = userId,
             StartTime = DateTime.UtcNow,
-            IsCompleted = false
+            IsCompleted = false,
+            QuizSessionQuestionResponses = new List<QuizSessionQuestionResponse>()
         };
+
+
+        // Save quiz session to the database
         await _dbContext.QuizSessions.AddAsync(quizSession);
         await _dbContext.SaveChangesAsync();
+
+        foreach (var question in selectedQuestions)
+        {
+            var existingQuestion = await _dbContext.Questions.FindAsync(question.Id);
+            if (existingQuestion == null)
+            {
+                Console.WriteLine($"Error: Question {question.Id} not found in database.");
+                throw new Exception($"Question {question.Id} not found.");
+            }
+
+            _dbContext.Attach(existingQuestion);
+
+            var quizSessionQuestionResponse = new QuizSessionQuestionResponse
+            {
+                QuestionId = question.Id,
+                Question = existingQuestion
+            };
+
+            quizSession.QuizSessionQuestionResponses.Add(quizSessionQuestionResponse);
+        }
         return quizSession;
     }
 
