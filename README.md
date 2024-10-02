@@ -74,7 +74,7 @@ This project is a demo showcasing my skills in developing a robust Web API using
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/quiz-api-demo.git
+   git clone [https://github.com/yourusername/quiz-api-demo.git](https://github.com/abdeloow/aspnetcore-quiz-webapi-template.git)
 2. Navigate to the project directory:
    ```bash
    cd quiz-api-demo
